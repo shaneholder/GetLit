@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetLit", "GetLit\GetLit.csproj", "{6A5018A7-F946-47EB-A215-98445BE498CE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{67C7451B-C165-41E3-A2C3-442513D11710} = {67C7451B-C165-41E3-A2C3-442513D11710}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetLit.Web", "GetLit.Web\GetLit.Web.csproj", "{67C7451B-C165-41E3-A2C3-442513D11710}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A5018A7-F946-47EB-A215-98445BE498CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A5018A7-F946-47EB-A215-98445BE498CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A5018A7-F946-47EB-A215-98445BE498CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A5018A7-F946-47EB-A215-98445BE498CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67C7451B-C165-41E3-A2C3-442513D11710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67C7451B-C165-41E3-A2C3-442513D11710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67C7451B-C165-41E3-A2C3-442513D11710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67C7451B-C165-41E3-A2C3-442513D11710}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
