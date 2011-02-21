@@ -54,6 +54,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClientBin\GetLit.xap" />
     <Content Include="Data\LibraryModel.edmx.sql" />
     <Content Include="GetLitTestPage.aspx" />
     <Content Include="GetLitTestPage.html" />
@@ -74,9 +75,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ClientBin\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EntityDeploy Include="Data\LibraryModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
