@@ -18,5 +18,11 @@ namespace GetLit
         {
             InitializeComponent();
         }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            Web.LibraryContext context = new Web.LibraryContext();
+            context.Load(context.LibrariesQuery());
+        }
     }
 }

@@ -18,7 +18,7 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("LibraryModel", "LibraryTitle", "Library", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(GetLit.Web.Data.Library), "Title", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(GetLit.Web.Data.Title))]
+[assembly: EdmRelationshipAttribute("LibraryModel", "LibraryTitle", "Library", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(GetLit.Web.Data.Library), "Title", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(GetLit.Web.Data.Title), true)]
 
 #endregion
 
@@ -251,12 +251,14 @@ namespace GetLit.Web.Data
         /// <param name="titleId">Initial value of the TitleId property.</param>
         /// <param name="name">Initial value of the Name property.</param>
         /// <param name="netflixTitleId">Initial value of the NetflixTitleId property.</param>
-        public static Title CreateTitle(global::System.Int32 titleId, global::System.String name, global::System.String netflixTitleId)
+        /// <param name="libraryId">Initial value of the LibraryId property.</param>
+        public static Title CreateTitle(global::System.Int32 titleId, global::System.String name, global::System.String netflixTitleId, global::System.Int32 libraryId)
         {
             Title title = new Title();
             title.TitleId = titleId;
             title.Name = name;
             title.NetflixTitleId = netflixTitleId;
+            title.LibraryId = libraryId;
             return title;
         }
 
@@ -337,6 +339,30 @@ namespace GetLit.Web.Data
         private global::System.String _NetflixTitleId;
         partial void OnNetflixTitleIdChanging(global::System.String value);
         partial void OnNetflixTitleIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 LibraryId
+        {
+            get
+            {
+                return _LibraryId;
+            }
+            set
+            {
+                OnLibraryIdChanging(value);
+                ReportPropertyChanging("LibraryId");
+                _LibraryId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("LibraryId");
+                OnLibraryIdChanged();
+            }
+        }
+        private global::System.Int32 _LibraryId;
+        partial void OnLibraryIdChanging(global::System.Int32 value);
+        partial void OnLibraryIdChanged();
 
         #endregion
     

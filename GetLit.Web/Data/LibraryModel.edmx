@@ -27,7 +27,7 @@
     <Property Name="TitleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="NetflixTitleId" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Library_LibraryId" Type="int" Nullable="false" />
+    <Property Name="LibraryId" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="LibraryTitle">
     <End Role="Library" Type="LibraryModel.Store.Libraries" Multiplicity="1" />
@@ -37,7 +37,7 @@
         <PropertyRef Name="LibraryId" />
       </Principal>
       <Dependent Role="Title">
-        <PropertyRef Name="Library_LibraryId" />
+        <PropertyRef Name="LibraryId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -58,21 +58,30 @@
             <PropertyRef Name="LibraryId" />
           </Key>
           <Property Type="Int32" Name="LibraryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Titles" Relationship="LibraryModel.LibraryTitle" FromRole="Library" ToRole="Title" />
           <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Titles" Relationship="LibraryModel.LibraryTitle" FromRole="Library" ToRole="Title" />
         </EntityType>
         <EntityType Name="Title">
           <Key>
             <PropertyRef Name="TitleId" />
           </Key>
           <Property Type="Int32" Name="TitleId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Library" Relationship="LibraryModel.LibraryTitle" FromRole="Title" ToRole="Library" />
           <Property Type="String" Name="Name" Nullable="false" />
           <Property Type="String" Name="NetflixTitleId" Nullable="false" />
+          <NavigationProperty Name="Library" Relationship="LibraryModel.LibraryTitle" FromRole="Title" ToRole="Library" />
+          <Property Type="Int32" Name="LibraryId" Nullable="false" />
         </EntityType>
         <Association Name="LibraryTitle">
           <End Type="LibraryModel.Library" Role="Library" Multiplicity="1" />
           <End Type="LibraryModel.Title" Role="Title" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Library">
+              <PropertyRef Name="LibraryId" />
+            </Principal>
+            <Dependent Role="Title">
+              <PropertyRef Name="LibraryId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -94,17 +103,10 @@
           <ScalarProperty Name="TitleId" ColumnName="TitleId" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="NetflixTitleId" ColumnName="NetflixTitleId" />
+          <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="LibraryTitle" TypeName="LibraryModel.LibraryTitle" StoreEntitySet="Titles">
-      <EndProperty Name="Library">
-        <ScalarProperty Name="LibraryId" ColumnName="Library_LibraryId" />
-      </EndProperty>
-      <EndProperty Name="Title">
-        <ScalarProperty Name="TitleId" ColumnName="TitleId" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
