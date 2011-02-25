@@ -4,6 +4,7 @@
   http://go.microsoft.com/fwlink/?LinkId=169433
   -->
 <configuration>
+<<<<<<< HEAD
   <system.webServer>
     <modules runAllManagedModulesForAllRequests="true">
       <add name="DomainServiceModule" preCondition="managedHandler" type="System.ServiceModel.DomainServices.Hosting.DomainServiceHttpModule, System.ServiceModel.DomainServices.Hosting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
@@ -14,6 +15,9 @@
     <httpModules>
       <add name="DomainServiceModule" type="System.ServiceModel.DomainServices.Hosting.DomainServiceHttpModule, System.ServiceModel.DomainServices.Hosting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     </httpModules>
+=======
+  <system.web>
+>>>>>>> 50f3cc55906ef39808f452ee87b6ca471f1af2f3
     <compilation debug="true" targetFramework="4.0">
       <assemblies>
         <add assembly="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
@@ -23,7 +27,10 @@
   <connectionStrings>
     <add name="LibraryModelContainer" connectionString="metadata=res://*/Data.LibraryModel.csdl|res://*/Data.LibraryModel.ssdl|res://*/Data.LibraryModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=.\SQLEXPRESS;Initial Catalog=GetLit;Integrated Security=True;MultipleActiveResultSets=True&quot;" providerName="System.Data.EntityClient" />
   </connectionStrings>
+<<<<<<< HEAD
   <system.serviceModel>
     <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true" />
   </system.serviceModel>
+=======
+>>>>>>> 50f3cc55906ef39808f452ee87b6ca471f1af2f3
 </configuration>

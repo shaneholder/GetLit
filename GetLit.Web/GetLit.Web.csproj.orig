@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+<<<<<<< HEAD
     <Reference Include="Microsoft.ServiceModel.DomainServices.Tools, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -43,6 +44,11 @@
     <Reference Include="System.ServiceModel.DomainServices.EntityFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.ServiceModel.DomainServices.Hosting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.ServiceModel.DomainServices.Server, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+=======
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+>>>>>>> 50f3cc55906ef39808f452ee87b6ca471f1af2f3
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -79,8 +85,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LibraryModel.edmx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="LibraryService.cs" />
     <Compile Include="LibraryService.metadata.cs" />
+=======
+>>>>>>> 50f3cc55906ef39808f452ee87b6ca471f1af2f3
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

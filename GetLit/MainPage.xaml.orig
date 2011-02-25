@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="GetLit.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+<<<<<<< HEAD
+    Loaded="UserControl_Loaded"
+=======
+>>>>>>> 50f3cc55906ef39808f452ee87b6ca471f1af2f3
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+
+    </Grid>
+</UserControl>
