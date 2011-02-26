@@ -18,11 +18,11 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("LibraryModel", "LibraryTitle", "Library", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(GetLit.RIA.Server.Web.Data.Library), "Title", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(GetLit.RIA.Server.Web.Data.Title), true)]
+[assembly: EdmRelationshipAttribute("LibraryModel", "LibraryTitle", "Library", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(GetLit.RIA.Server.Data.Library), "Title", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(GetLit.RIA.Server.Data.Title), true)]
 
 #endregion
 
-namespace GetLit.RIA.Server.Web.Data
+namespace GetLit.RIA.Server.Data
 {
     #region Contexts
     

@@ -10,7 +10,7 @@ namespace GetLit.RIA.Server.Web
     using System.ServiceModel.DomainServices.EntityFramework;
     using System.ServiceModel.DomainServices.Hosting;
     using System.ServiceModel.DomainServices.Server;
-    using GetLit.RIA.Server.Web.Data;
+    using GetLit.RIA.Server.Data;
 
 
     // Implements application logic using the LibraryModelContainer context.

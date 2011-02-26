@@ -16,7 +16,7 @@
     <SilverlightApplication>false</SilverlightApplication>
     <ValidateXaml>true</ValidateXaml>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
-    <LinkedServerProject>..\GetLit.RIA.Server.Web\GetLit.RIA.Server.Web.csproj</LinkedServerProject>
+    <LinkedServerProject>..\GetLit.RIA.Server.Web\GetLit.RIA.Server.csproj</LinkedServerProject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,9 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebContext.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Server\" />
+    <Folder Include="Server\Data\" />
+    <Folder Include="Server\Web\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>

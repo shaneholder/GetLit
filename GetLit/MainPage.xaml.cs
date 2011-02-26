@@ -21,7 +21,7 @@ namespace GetLit
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            Web.LibraryContext context = new Web.LibraryContext();
+            GetLit.RIA.Server.Web.LibraryContext context = new GetLit.RIA.Server.Web.LibraryContext();
             context.Load(context.LibrariesQuery());
         }
     }

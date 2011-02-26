@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetLit", "GetLit\GetLit.csp
 		{67C7451B-C165-41E3-A2C3-442513D11710} = {67C7451B-C165-41E3-A2C3-442513D11710}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetLit.Web", "GetLit.Web\GetLit.Web.csproj", "{67C7451B-C165-41E3-A2C3-442513D11710}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetLit.Host", "GetLit.Web\GetLit.Host.csproj", "{67C7451B-C165-41E3-A2C3-442513D11710}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{E9E80309-3DE1-433B-A97F-6536CBEEDE56}"
 EndProject
@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetLit.RIA", "GetLit.RIA.Se
 		{40C8365E-08B6-4FB9-BB6F-3D59EE3B0C0A} = {40C8365E-08B6-4FB9-BB6F-3D59EE3B0C0A}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetLit.RIA.Server.Web", "GetLit.RIA.Server.Web\GetLit.RIA.Server.Web.csproj", "{40C8365E-08B6-4FB9-BB6F-3D59EE3B0C0A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetLit.RIA.Server", "GetLit.RIA.Server.Web\GetLit.RIA.Server.csproj", "{40C8365E-08B6-4FB9-BB6F-3D59EE3B0C0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

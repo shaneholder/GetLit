@@ -10,8 +10,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GetLit.Web</RootNamespace>
-    <AssemblyName>GetLit.Web</AssemblyName>
+    <RootNamespace>GetLit.Host</RootNamespace>
+    <AssemblyName>GetLit.Host</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <SilverlightApplicationList>{6A5018A7-F946-47EB-A215-98445BE498CE}|..\GetLit\GetLit.csproj|ClientBin|False</SilverlightApplicationList>
   </PropertyGroup>
@@ -76,9 +76,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GetLit.RIA.Server.Web\GetLit.RIA.Server.Web.csproj">
+    <ProjectReference Include="..\GetLit.RIA.Server.Web\GetLit.RIA.Server.csproj">
       <Project>{40C8365E-08B6-4FB9-BB6F-3D59EE3B0C0A}</Project>
-      <Name>GetLit.RIA.Server.Web</Name>
+      <Name>GetLit.RIA.Server</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
