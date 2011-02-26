@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LibraryModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="LibraryModelStoreContainer">
+    <EntitySet Name="Libraries" EntityType="LibraryModel.Store.Libraries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Titles" EntityType="LibraryModel.Store.Titles" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="LibraryTitle" Association="LibraryModel.Store.LibraryTitle">
+      <End Role="Library" EntitySet="Libraries" />
+      <End Role="Title" EntitySet="Titles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Libraries">
+    <Key>
+      <PropertyRef Name="LibraryId" />
+    </Key>
+    <Property Name="LibraryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Titles">
+    <Key>
+      <PropertyRef Name="TitleId" />
+    </Key>
+    <Property Name="TitleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NetflixTitleId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LibraryId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="LibraryTitle">
+    <End Role="Library" Type="LibraryModel.Store.Libraries" Multiplicity="1" />
+    <End Role="Title" Type="LibraryModel.Store.Titles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Library">
+        <PropertyRef Name="LibraryId" />
+      </Principal>
+      <Dependent Role="Title">
+        <PropertyRef Name="LibraryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="LibraryModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="LibraryModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Libraries" EntityType="LibraryModel.Library" />
+          <EntitySet Name="Titles" EntityType="LibraryModel.Title" />
+          <AssociationSet Name="LibraryTitle" Association="LibraryModel.LibraryTitle">
+            <End Role="Library" EntitySet="Libraries" />
+            <End Role="Title" EntitySet="Titles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Library">
+          <Key>
+            <PropertyRef Name="LibraryId" />
+          </Key>
+          <Property Type="Int32" Name="LibraryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Titles" Relationship="LibraryModel.LibraryTitle" FromRole="Library" ToRole="Title" />
+        </EntityType>
+        <EntityType Name="Title">
+          <Key>
+            <PropertyRef Name="TitleId" />
+          </Key>
+          <Property Type="Int32" Name="TitleId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="NetflixTitleId" Nullable="false" />
+          <NavigationProperty Name="Library" Relationship="LibraryModel.LibraryTitle" FromRole="Title" ToRole="Library" />
+          <Property Type="Int32" Name="LibraryId" Nullable="false" />
+        </EntityType>
+        <Association Name="LibraryTitle">
+          <End Type="LibraryModel.Library" Role="Library" Multiplicity="1" />
+          <End Type="LibraryModel.Title" Role="Title" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Library">
+              <PropertyRef Name="LibraryId" />
+            </Principal>
+            <Dependent Role="Title">
+              <PropertyRef Name="LibraryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LibraryModelStoreContainer" CdmEntityContainer="LibraryModelContainer">
+    <EntitySetMapping Name="Libraries">
+      <EntityTypeMapping TypeName="IsTypeOf(LibraryModel.Library)">
+        <MappingFragment StoreEntitySet="Libraries">
+          <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Titles">
+      <EntityTypeMapping TypeName="IsTypeOf(LibraryModel.Title)">
+        <MappingFragment StoreEntitySet="Titles">
+          <ScalarProperty Name="TitleId" ColumnName="TitleId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NetflixTitleId" ColumnName="NetflixTitleId" />
+          <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="LibraryModel" >
+        <EntityTypeShape EntityType="LibraryModel.Library" Width="1.5" PointX="1.75" PointY="1.25" Height="1.59568359375" />
+        <EntityTypeShape EntityType="LibraryModel.Title" Width="1.5" PointX="4.75" PointY="1.375" Height="1.9802864583333339" />
+        <AssociationConnector Association="LibraryModel.LibraryTitle">
+          <ConnectorPoint PointX="3.25" PointY="2.110341796875" />
+          <ConnectorPoint PointX="4.75" PointY="2.110341796875" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
