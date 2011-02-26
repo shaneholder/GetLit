@@ -100,9 +100,17 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GetLit.AppServices\GetLit.AppServices.csproj">
+      <Project>{7699336D-6EC7-46EF-AE7D-270B9DE3A308}</Project>
+      <Name>GetLit.AppServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GetLit.RIA.Server\GetLit.RIA.csproj">
       <Project>{B94A6022-9786-4BD4-8FDB-42E3228AA918}</Project>
       <Name>GetLit.RIA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GetLit.ViewModels\GetLit.ViewModels.csproj">
+      <Project>{9346E742-3FD7-489C-B6DA-097ECC9A590B}</Project>
+      <Name>GetLit.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
