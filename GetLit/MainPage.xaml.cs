@@ -24,5 +24,15 @@ namespace GetLit
             GetLit.RIA.Server.Web.LibraryContext context = new GetLit.RIA.Server.Web.LibraryContext();
             context.Load(context.LibrariesQuery());
         }
+
+        private void libraryDomainDataSource_LoadedData(object sender, System.Windows.Controls.LoadedDataEventArgs e)
+        {
+
+            if (e.HasError)
+            {
+                System.Windows.MessageBox.Show(e.Error.ToString(), "Load Error", System.Windows.MessageBoxButton.OK);
+                e.MarkErrorAsHandled();
+            }
+        }
     }
 }

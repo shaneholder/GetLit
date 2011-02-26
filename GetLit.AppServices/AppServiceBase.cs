@@ -10,10 +10,10 @@ using GetLit.RIA.Server.Web;
 namespace GetLit.AppServices
 {
     [Export(typeof(IApplicationService))]
-    public abstract class ServiceBase<T> : IServiceRepository<T>, IApplicationService where T : Entity
+    public abstract class AppServiceBase<T> : IServiceRepository<T>, IApplicationService, IApplicationLifetimeAware where T : Entity
     {
-        private static ServiceBase<T> _Current = null;
-        public static ServiceBase<T> Current
+        private static AppServiceBase<T> _Current = null;
+        public static AppServiceBase<T> Current
         {
             get { return _Current; }
         }
@@ -21,7 +21,6 @@ namespace GetLit.AppServices
         public virtual void StartService(ApplicationServiceContext context)
         {
             _Current = this;
-            Load(true);
         }
 
         public virtual void StopService()
@@ -71,5 +70,24 @@ namespace GetLit.AppServices
         }
         #endregion
 
+
+        public void Exited()
+        {
+            
+        }
+
+        public void Exiting()
+        {
+            
+        }
+
+        public void Started()
+        {
+            Load(true);
+        }
+
+        public void Starting()
+        {
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.ComponentModel.Composition;
+using System.Diagnostics;
 
 namespace GetLit.RIA.Server.Web
 {
@@ -23,6 +24,7 @@ namespace GetLit.RIA.Server.Web
 
         public void StartService(ApplicationServiceContext context)
         {
+            Debug.WriteLine("LibraryContext StartSErvice");
             _Current = this;            
         }
 
