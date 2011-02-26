@@ -1,4 +1,7 @@
-﻿set identity_insert Libraries on
+﻿use GetLit
+go
+
+set identity_insert Libraries on
 insert into Libraries (LibraryId, Name) Values (1, 'First Library')
 insert into Libraries (LibraryId, Name) Values (2, 'Second Library')
 set identity_insert Libraries off

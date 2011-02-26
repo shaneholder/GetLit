@@ -58,6 +58,11 @@ namespace GetLit
                 e.Handled = true;
                 Deployment.Current.Dispatcher.BeginInvoke(delegate { ReportErrorToDOM(e); });
             }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine(e.ExceptionObject);
+                System.Diagnostics.Debugger.Break();
+            }
         }
 
         private void ReportErrorToDOM(ApplicationUnhandledExceptionEventArgs e)
