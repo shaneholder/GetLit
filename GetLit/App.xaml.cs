@@ -9,11 +9,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.ComponentModel.Composition;
 
 namespace GetLit
 {
     public partial class App : Application
     {
+        [ImportMany]
+        public IEnumerable<IApplicationService> ApplicationServices { get; set; }
 
         public App()
         {
@@ -22,6 +25,12 @@ namespace GetLit
             this.UnhandledException += this.Application_UnhandledException;
 
             InitializeComponent();
+            CompositionInitializer.SatisfyImports(this);
+
+            foreach (var item in ApplicationServices)
+            {
+                this.ApplicationLifetimeObjects.Add(item);
+            }
         }
 
         private void Application_Startup(object sender, StartupEventArgs e)
